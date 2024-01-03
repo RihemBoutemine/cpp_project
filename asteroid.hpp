@@ -10,6 +10,7 @@ public:
     double GetX() const override;
     double GetY() const override;
     ObjectType GetType() const override;
+    std::string GetTypeName() override;
 
       // Méthodes de déplacement
     void Move(double screenWidth, double screenHeight);

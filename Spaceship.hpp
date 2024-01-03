@@ -21,6 +21,8 @@ public:
     void Move(double screenWidth, double screenHeight, double angle);
     void RotateLeft();
     void RotateRight();
+
+    std::string GetTypeName() override;
 };
 
 #endif // SPACESHIP_HPP

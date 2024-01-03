@@ -4,31 +4,71 @@
 #include "missile.hpp"
 #include "spaceship.hpp"
 #include "flyingobject.hpp"
+#include<random>
+#include "framework.hpp"
 
-// Constructeur de la classe Model
-Model::Model() {
-    // Initialiser les objets du modèle (vous devrez peut-être ajuster les paramètres)
-    asteroid = new Asteroid(960, 540, 60, 5, 5);
-    missile = new Missile(250, 150, 60, 5, 45);
+
+Model::Model(Framework* framework){
+
     spaceship = new Spaceship(60, 140, 5, 90, 7, 7);
+    this->framework = framework;
+
+    missiles.push_back(new Missile(400,500,50,40,90));
+    asteroids.push_back(new Asteroid(800, 500,70,40,90));
+
+}
+
+Model::~Model() {
+    delete spaceship;
+}
+
+Spaceship *Model::GetSpaceship() const {
+    return spaceship;
+}
+
+int Model::Update() {
+    if (asteroids.empty()) {
+        return 1;
+    }
+
+    for (int i = 0; i < asteroids.size(); i++) {
+        asteroids[i]->Move(framework->GetScreenWidth(), framework->GetScreenHeight());}
+    //this->spaceship->Move(framework->GetScreenWidth(), framework->GetScreenHeight(), spaceship->GetAngle());
+
+    /*if (!missiles.empty()) {
+        if (missiles[0]->Move(framework->GetScreenWidth(), framework->GetScreenHeight()))
+            missiles.clear();
+    }
+    for (int i = 0; i < asteroids.size(); i++) {
+        asteroids[i]->Move(framework->GetScreenWidth(), framework->GetScreenHeight());
+        if (!missiles.empty()) {
+            if (FlyingObject::Collide(*asteroids[i], *missiles[0])) {
+                missiles.clear();
+                if (asteroids[i]->GetSize() > 70) {
+                    asteroids[i]->SetSize(asteroids[i]->GetSize() / 2);
+                    asteroids.push_back(
+                            new Asteroid(asteroids[i]->GetX(), asteroids[i]->GetY(), asteroids[i]->GetSize(), 3, 3,
+                                         asteroids[i]->GetAngle() + 90));
+                } else {
+                    asteroids.erase(asteroids.begin() + i);
+                }
+            }
+        }
+    }*/
+    return 0;
 }
 
 std::vector<FlyingObject*> Model::GetFlyingObjects() {
-    std::vector<FlyingObject*> flyingObjects;
 
-    flyingObjects.push_back(asteroid);
-    flyingObjects.push_back(missile);
+    std::vector<FlyingObject*> flyingObjects;
+    std::copy(missiles.begin(), missiles.end(), std::back_inserter(flyingObjects));
+    std::copy(asteroids.begin(), asteroids.end(), std::back_inserter(flyingObjects));
     flyingObjects.push_back(spaceship);
 
     return flyingObjects;
 }
 
-Model::~Model() {
-    // Libérer la mémoire allouée dynamiquement
-    delete asteroid;
-    delete missile;
-    delete spaceship;
-}
+
 
 /*
 void FlyingObject::Move(double screenWidth, double screenHeight) {

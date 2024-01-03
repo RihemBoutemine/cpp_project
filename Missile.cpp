@@ -63,3 +63,7 @@ void Missile::Move(double screenWidth, double screenHeight) {
         SetY(screenHeight / 2);
     }
 }
+
+std::string Missile::GetTypeName() {
+    return "Missile";
+}

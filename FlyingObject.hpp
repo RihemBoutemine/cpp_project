@@ -37,7 +37,7 @@ public:
 
     // Méthodes de déplacement
     void Move(double screenWidth, double screenHeight);
-    bool Collide(const FlyingObject& o1, const FlyingObject& o2);
+    static bool Collide(const FlyingObject& o1, const FlyingObject& o2);
     virtual std::string GetTypeName();
 
 protected:

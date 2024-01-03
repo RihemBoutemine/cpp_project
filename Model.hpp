@@ -7,35 +7,28 @@
 #include "missile.hpp"
 #include "spaceship.hpp"
 #include <vector>
+#include "framework.hpp"
 
 class Model {
 public:
-    Model();  // Constructeur
+    Model(Framework *framework);  // Constructeur
     ~Model();
-/*
-    // Méthodes pour les actions du joueur
-    void AsteroidMove(double screenWidth, double screenHeight);
-    void MissileMove(double screenWidth, double screenHeight);
-    void SpaceshipMove(double screenWidth, double screenHeight, double angle);
-    void SpaceshipRotateLeft();
-    void SpaceshipRotateRight();
-    void FlyingObjectMove();
-
-    // Méthode de collision statique
-    static bool Collide(const FlyingObject& o1, const FlyingObject& o2);
-*/
-
 // Méthode pour obtenir les objets volants actuellement en jeu
     std::vector<FlyingObject*> GetFlyingObjects();
-public:
     Asteroid* GetAsteroid() const { return asteroid; }
     Missile* GetMissile() const { return missile; }
-    Spaceship* GetSpaceship() const { return spaceship; }
+    Spaceship* GetSpaceship() const;
+    int Update();
+
+
 
 private:
     Asteroid* asteroid;
     Missile* missile;
     Spaceship* spaceship;
+    Framework* framework;
+    std::vector<Missile*> missiles;
+    std::vector<Asteroid*> asteroids;
     // Ajoutez d'autres attributs si nécessaire
 };
 

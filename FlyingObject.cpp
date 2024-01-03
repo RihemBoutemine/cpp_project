@@ -25,6 +25,10 @@ double FlyingObject::GetYSpeed() {
     return ySpeed;
 }
 
+double FlyingObject::GetAngle() {
+    return Angle;
+}
+
 double FlyingObject::GetSize() const {
     return size;
 }

@@ -16,6 +16,7 @@ public:
     double GetSpeed();
     void SetAngle(double angle);
     void SetSpeed(double speed);
+    std::string GetTypeName() override;
 
     // Méthodes de déplacement
     void Move(double width, double height);

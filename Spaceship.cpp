@@ -2,6 +2,7 @@
 #include "FlyingObject.hpp"
 #include "spaceship.hpp"
 #include "math.h"
+#include <iostream>
 
 Spaceship::Spaceship(double x, double y, double size, double angle, double xSpeed, double ySpeed)
         : FlyingObject(x, y, size, xSpeed, ySpeed) {
@@ -41,6 +42,7 @@ void Spaceship:: Move(double screenWidth, double screenHeight, double angle) {
     // Mettre à jour les nouvelles positions
     SetX(x);
     SetY(y);
+    std::cout << "move" << std::endl;
 }
 
 void Spaceship::SpeedUp(double accelerationFactor, double angle) {
@@ -53,7 +55,6 @@ void Spaceship::SpeedUp(double accelerationFactor, double angle) {
 }
 
 
-
 void Spaceship::SpeedDown(double decelerationFactor, double angle) {
     // Convertir l'angle en radians
     double angle_rad = angle * (M_PI / 180.0);
@@ -63,11 +64,14 @@ void Spaceship::SpeedDown(double decelerationFactor, double angle) {
     ySpeed -= decelerationFactor * sin(angle_rad);
 }
 
-
+std::string Spaceship::GetTypeName() {
+    return "Spaceship";
+}
 // Méthode pour faire pivoter le vaisseau vers la gauche
 
 void Spaceship::RotateLeft() {
-    angle -= 5; // Faites pivoter vers la gauche en réduisant l'angle
+    angle -= 40; // Faites pivoter vers la gauche en réduisant l'angle
+    std::cout << "Angle after rotating left: " << angle << std::endl;
 }
 
 // Méthode pour faire pivoter le vaisseau vers la droite

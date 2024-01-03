@@ -4,53 +4,42 @@
 
 
 View::View(Framework* framework) : framework(framework) {}
-View::~View() {}
+
 
 // cela me semble plus logique
 void View::RefreshDisplay(const std::vector<FlyingObject*>& flyingObjects) {
     // Effacer l'écran
-    //framework->Update();
 
     for (const auto& obj : flyingObjects) {
         std::string typeName = obj->GetTypeName();
+        std::cout << "entrée de la boucle " << std::endl;
 
-        if (typeName == "Missile")
-            // Afficher le missile
+        /*if (typeName == "Spaceship") {
+            framework->DrawShip(700, 700, 90, 0, false);
+            std::cout << "Ship Position: X = " << std::endl;
+
+        } else if (typeName == "Missile") {
+            framework->DrawMissile(600, 500);
+            std::cout << "Missile Position: X = " << std::endl;
+
+        } else if (typeName == "Asteroid") {
+            framework->DrawAsteroid(800, 500,70);
+            std::cout << "Asteroid Position: X = " << std::endl;
+        }*/
+
+        if (typeName == "Spaceship") {
+            framework->DrawShip(obj->GetX(), obj->GetY(), obj->GetAngle(), 0, false);
+            std::cout << "Ship Position: X = " << obj->GetX() << std::endl;
+        } else if (typeName == "Missile") {
             framework->DrawMissile(obj->GetX(), obj->GetY());
-        else if (typeName == "Asteroid")
-            // Afficher l'astéroïde
+            std::cout << "Missile Position: X = " << obj->GetX() << std::endl;
+        } else if (typeName == "Asteroid") {
             framework->DrawAsteroid(obj->GetX(), obj->GetY(), obj->GetSize());
-    }
-}
-
-
-    // Parcourir la liste des objets volants et les afficher
-    /*for (const FlyingObject* obj : flyingObjects) {
-        const Asteroid* asteroid = dynamic_cast<const Asteroid*>(obj);
-        const Missile* missile = dynamic_cast<const Missile*>(obj);
-
-        // Si l'objet est un Asteroid, dessiner l'asteroid
-        if (asteroid) {
-            framework->DrawAsteroid(asteroid->GetX(), asteroid->GetY(), asteroid->GetSize());
-        }
-            // Si l'objet est un Missile, dessiner le missile
-        else if (missile) {
-            framework->DrawMissile(missile->GetX(), missile->GetY());
+            std::cout << "Asteroid Position: X = " << obj->GetX() << std::endl;
         }
     }
 }
-*/
-/*
-void View::RefreshDisplay(const std::vector<FlyingObject*>& flyingObjects) {
-    // Effacer l'écran
-    framework->Update();
 
-    // Parcourir la liste des objets volants et les afficher
-    for (const FlyingObject* obj : flyingObjects) {
+View::~View() {}
 
-        framework->DrawAsteroid(obj->GetX(), obj->GetY(), obj->GetSize());
-        framework->DrawMissile(obj->GetX(), obj->GetY());
-        //framework->DrawShip(obj->GetX(), obj->GetY(), obj->GetAngle(), 0, false);
-    }
-}
-*/
+
