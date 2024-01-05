@@ -11,13 +11,14 @@
 
 class Model {
 public:
-    Model(Framework *framework);  // Constructeur
+    Model(int asteroidSize, Framework *framework);  // Constructeur
     ~Model();
 // Méthode pour obtenir les objets volants actuellement en jeu
     std::vector<FlyingObject*> GetFlyingObjects();
     Asteroid* GetAsteroid() const { return asteroid; }
     Missile* GetMissile() const { return missile; }
     Spaceship* GetSpaceship() const;
+    void shoot();
     int Update();
 
 

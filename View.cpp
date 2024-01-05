@@ -14,22 +14,10 @@ void View::RefreshDisplay(const std::vector<FlyingObject*>& flyingObjects) {
         std::string typeName = obj->GetTypeName();
         std::cout << "entrée de la boucle " << std::endl;
 
-        /*if (typeName == "Spaceship") {
-            framework->DrawShip(700, 700, 90, 0, false);
-            std::cout << "Ship Position: X = " << std::endl;
-
-        } else if (typeName == "Missile") {
-            framework->DrawMissile(600, 500);
-            std::cout << "Missile Position: X = " << std::endl;
-
-        } else if (typeName == "Asteroid") {
-            framework->DrawAsteroid(800, 500,70);
-            std::cout << "Asteroid Position: X = " << std::endl;
-        }*/
 
         if (typeName == "Spaceship") {
-            framework->DrawShip(obj->GetX(), obj->GetY(), obj->GetAngle(), 0, false);
-            std::cout << "Ship Position: X = " << obj->GetX() << std::endl;
+            framework->DrawShip(obj->GetX(), obj->GetY(), obj->GetAngle(),((Spaceship*)obj)->getShieldLevel(),((Spaceship*)obj)->isWarning());
+            std::cout << "Angle du ship test " << obj->GetAngle() << std::endl;
         } else if (typeName == "Missile") {
             framework->DrawMissile(obj->GetX(), obj->GetY());
             std::cout << "Missile Position: X = " << obj->GetX() << std::endl;

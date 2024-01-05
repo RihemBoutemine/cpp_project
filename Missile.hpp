@@ -9,17 +9,18 @@ public:
     // Constructeur
     Missile(double x, double y, double size, double speed, double angle);
 
+
     double GetX() const override;
     double GetY() const override;
     ObjectType GetType() const override;
-    double GetAngle() ;
+    double GetAngle() const ;
     double GetSpeed();
     void SetAngle(double angle);
     void SetSpeed(double speed);
     std::string GetTypeName() override;
 
     // Méthodes de déplacement
-    void Move(double width, double height);
+    bool Move(double width, double height);
 
 private:
     double angle;

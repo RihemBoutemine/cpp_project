@@ -4,9 +4,9 @@
 #include <iostream>
 
 controller::controller(int screenWidth, int screenHeight, int frameRate){
-    framework = new Framework(screenWidth, screenHeight, frameRate, 50, 30);
+    framework = new Framework(screenWidth, screenHeight, frameRate, 80, 30);
     view = new View(framework);
-    model = new Model(framework);
+    model = new Model(70,framework);
 }
 
 void controller::LaunchGame() {
@@ -20,29 +20,29 @@ void controller::LaunchGame() {
             std::cout << "Missile Position: X = " << std::endl;
             view->RefreshDisplay(model->GetFlyingObjects());
 
-            // Ensure that GetAsteroid(), GetMissile(), and GetSpaceship() return valid pointers
-            /*if (model->GetAsteroid()) {
-                model->GetAsteroid()->Move(1920, 1080);
-            }
-
-            if (model->GetMissile()) {
-                model->GetMissile()->Move(1920, 1080);
-            }*/
-
             if (model->GetSpaceship()) {
                 if (keyPressed == SDLK_LEFT) {
-                    model->GetSpaceship()->RotateLeft();
+                    model->GetSpaceship()->Rotate(-30);//Rotate(-90); // Rotation vers la gauche
                 } else if (keyPressed == SDLK_RIGHT) {
-                    model->GetSpaceship()->RotateRight();
+                    model->GetSpaceship()->Rotate(30); // Rotation vers la droite
                 } else if (keyPressed == SDLK_UP) {
-                    model->GetSpaceship()->Move(1920, 1080, model->GetSpaceship()->GetAngle() - 90);
+                    model->GetSpaceship()->SpeedUp(0.3,model->GetSpaceship()->GetAngle() - 90);//Move(1920, 1080, model->GetSpaceship()->GetAngle() - 90);
                 } else if (keyPressed == SDLK_DOWN) {
-                    model->GetSpaceship()->Move(1920, 1080, model->GetSpaceship()->GetAngle() + 90);
+                    model->GetSpaceship()->SpeedDown(3,model->GetSpaceship()->GetAngle() + 90); //Move(1920, 1080, model->GetSpaceship()->GetAngle() + 90);
+                } else if (keyPressed == SDLK_SPACE) {
+                    model->shoot();
                 }
             }
             keyPressed = framework->GetInput();
-    }
+        }
+
+        if (w == 1) {
+            printf("you win");
+        } else if (w == -1) {
+            printf("game over");
+        }
 }
+
 
 controller::~controller() {
     delete framework;

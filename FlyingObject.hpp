@@ -12,10 +12,11 @@ enum class ObjectType {
 class FlyingObject {
 public:
     // Constructeur
-    FlyingObject(double x, double y, double size, double xSpeed, double ySpeed);
+    FlyingObject(double x, double y, double size, double xSpeed, double ySpeed, double angle);
     virtual ~FlyingObject() = default;
     virtual double GetX() const = 0;
     virtual double GetY() const = 0;
+    virtual double GetAngle() const = 0;
     virtual ObjectType GetType() const = 0;
 
     // Getters
@@ -32,7 +33,7 @@ public:
     void SetXSpeed(double xSpeed);
     void SetYSpeed(double ySpeed);
     void SetSize(double size);
-    void SetAngle(double Angle);
+    void SetAngle(double angle);
 
 
     // Méthodes de déplacement
@@ -46,7 +47,8 @@ protected:
     double size;
     double xSpeed;
     double ySpeed;
-    double Angle;
+    double angle;
+
 };
 
 // Définition de la fonction Collide en dehors de la classe (comme inline)
