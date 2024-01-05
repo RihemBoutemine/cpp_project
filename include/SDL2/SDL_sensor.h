@@ -72,10 +72,10 @@ typedef enum
     SDL_SENSOR_UNKNOWN,         /**< Unknown sensor type */
     SDL_SENSOR_ACCEL,           /**< Accelerometer */
     SDL_SENSOR_GYRO,            /**< Gyroscope */
-    SDL_SENSOR_ACCEL_L,         /**< Accelerometer for left Joy-Con controller and Wii nunchuk */
-    SDL_SENSOR_GYRO_L,          /**< Gyroscope for left Joy-Con controller */
-    SDL_SENSOR_ACCEL_R,         /**< Accelerometer for right Joy-Con controller */
-    SDL_SENSOR_GYRO_R           /**< Gyroscope for right Joy-Con controller */
+    SDL_SENSOR_ACCEL_L,         /**< Accelerometer for left Joy-Con Controller and Wii nunchuk */
+    SDL_SENSOR_GYRO_L,          /**< Gyroscope for left Joy-Con Controller */
+    SDL_SENSOR_ACCEL_R,         /**< Accelerometer for right Joy-Con Controller */
+    SDL_SENSOR_GYRO_R           /**< Gyroscope for right Joy-Con Controller */
 } SDL_SensorType;
 
 /**
@@ -121,7 +121,7 @@ typedef enum
  * -Y ... +Y : bottom ... top
  * -Z ... +Z : farther ... closer
  * 
- * The axis data is not changed when the phone or controller is rotated.
+ * The axis data is not changed when the phone or Controller is rotated.
  *
  * \sa SDL_GetDisplayOrientation()
  */

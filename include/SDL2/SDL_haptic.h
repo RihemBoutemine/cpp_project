@@ -691,8 +691,8 @@ typedef struct SDL_HapticLeftRight
     Uint32 length;          /**< Duration of the effect in milliseconds. */
 
     /* Rumble */
-    Uint16 large_magnitude; /**< Control of the large controller motor. */
-    Uint16 small_magnitude; /**< Control of the small controller motor. */
+    Uint16 large_magnitude; /**< Control of the large Controller motor. */
+    Uint16 small_magnitude; /**< Control of the small Controller motor. */
 } SDL_HapticLeftRight;
 
 /**

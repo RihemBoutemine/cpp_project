@@ -12,7 +12,7 @@ file(COPY images/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/images/)
 set(SRCS
         main.cpp
         framework.cpp
-        asteroid.cpp
+        Asteroid.cpp
         Missile.cpp  # Correction ici
         FlyingObject.cpp
         Spaceship.cpp
@@ -21,7 +21,7 @@ set(SRCS
 # Listez vos fichiers d'en-tête
 set(HEADERS
         framework.hpp
-        asteroid.hpp
+        Asteroid.hpp
         Missile.hpp  # Correction ici
         FlyingObject.hpp
         Spaceship.hpp
@@ -29,8 +29,8 @@ set(HEADERS
         Model.hpp
         View.cpp
         View.hpp
-        controller.cpp
-        controller.hpp
+        Controller.cpp
+        Controller.hpp
 )
 
 # Recherchez SDL2

@@ -1,6 +1,6 @@
 // Dans Model.cpp (fichier d'implémentation)
 #include "Model.hpp"
-#include "asteroid.hpp"
+#include "Asteroid.hpp"
 #include "missile.hpp"
 #include "spaceship.hpp"
 #include "flyingobject.hpp"

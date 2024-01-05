@@ -1,11 +1,11 @@
-#include "controller.hpp"
+#include "Controller.hpp"
 #include "framework.hpp"
 #include <iostream>
 
 
 int main(int argc, char* argv[]) {
 
-    controller gameController(1920, 1080, 30);
+    Controller gameController(1920, 1080, 30);
     gameController.LaunchGame();
 
     return 0;

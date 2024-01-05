@@ -63,8 +63,8 @@ build CMakeFiles/SDLTEST.dir/framework.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
   OBJECT_FILE_DIR = CMakeFiles\SDLTEST.dir
 
-build CMakeFiles/SDLTEST.dir/asteroid.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/asteroid.cpp || cmake_object_order_depends_target_SDLTEST
-  DEP_FILE = CMakeFiles\SDLTEST.dir\asteroid.cpp.obj.d
+build CMakeFiles/SDLTEST.dir/Asteroid.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/Asteroid.cpp || cmake_object_order_depends_target_SDLTEST
+  DEP_FILE = CMakeFiles\SDLTEST.dir\Asteroid.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/ryham/CLionProjects/projet/include -isystem C:/Users/ryham/CLionProjects/projet/include/SDL2
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
@@ -91,8 +91,8 @@ build CMakeFiles/SDLTEST.dir/Spaceship.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
   OBJECT_FILE_DIR = CMakeFiles\SDLTEST.dir
 
-build CMakeFiles/SDLTEST.dir/model.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/model.cpp || cmake_object_order_depends_target_SDLTEST
-  DEP_FILE = CMakeFiles\SDLTEST.dir\model.cpp.obj.d
+build CMakeFiles/SDLTEST.dir/Model.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/Model.cpp || cmake_object_order_depends_target_SDLTEST
+  DEP_FILE = CMakeFiles\SDLTEST.dir\Model.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/ryham/CLionProjects/projet/include -isystem C:/Users/ryham/CLionProjects/projet/include/SDL2
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
@@ -105,8 +105,8 @@ build CMakeFiles/SDLTEST.dir/View.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
   OBJECT_FILE_DIR = CMakeFiles\SDLTEST.dir
 
-build CMakeFiles/SDLTEST.dir/controller.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/controller.cpp || cmake_object_order_depends_target_SDLTEST
-  DEP_FILE = CMakeFiles\SDLTEST.dir\controller.cpp.obj.d
+build CMakeFiles/SDLTEST.dir/Controller.cpp.obj: CXX_COMPILER__SDLTEST_unscanned_Debug C$:/Users/ryham/CLionProjects/projet/Controller.cpp || cmake_object_order_depends_target_SDLTEST
+  DEP_FILE = CMakeFiles\SDLTEST.dir\Controller.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/ryham/CLionProjects/projet/include -isystem C:/Users/ryham/CLionProjects/projet/include/SDL2
   OBJECT_DIR = CMakeFiles\SDLTEST.dir
@@ -120,7 +120,7 @@ build CMakeFiles/SDLTEST.dir/controller.cpp.obj: CXX_COMPILER__SDLTEST_unscanned
 #############################################
 # Link the executable SDLTEST.exe
 
-build SDLTEST.exe: CXX_EXECUTABLE_LINKER__SDLTEST_Debug CMakeFiles/SDLTEST.dir/main.cpp.obj CMakeFiles/SDLTEST.dir/framework.cpp.obj CMakeFiles/SDLTEST.dir/asteroid.cpp.obj CMakeFiles/SDLTEST.dir/Missile.cpp.obj CMakeFiles/SDLTEST.dir/FlyingObject.cpp.obj CMakeFiles/SDLTEST.dir/Spaceship.cpp.obj CMakeFiles/SDLTEST.dir/model.cpp.obj CMakeFiles/SDLTEST.dir/View.cpp.obj CMakeFiles/SDLTEST.dir/controller.cpp.obj | C$:/Users/ryham/CLionProjects/projet/lib/libSDL2main.a C$:/Users/ryham/CLionProjects/projet/lib/libSDL2.dll.a
+build SDLTEST.exe: CXX_EXECUTABLE_LINKER__SDLTEST_Debug CMakeFiles/SDLTEST.dir/main.cpp.obj CMakeFiles/SDLTEST.dir/framework.cpp.obj CMakeFiles/SDLTEST.dir/Asteroid.cpp.obj CMakeFiles/SDLTEST.dir/Missile.cpp.obj CMakeFiles/SDLTEST.dir/FlyingObject.cpp.obj CMakeFiles/SDLTEST.dir/Spaceship.cpp.obj CMakeFiles/SDLTEST.dir/Model.cpp.obj CMakeFiles/SDLTEST.dir/View.cpp.obj CMakeFiles/SDLTEST.dir/Controller.cpp.obj | C$:/Users/ryham/CLionProjects/projet/lib/libSDL2main.a C$:/Users/ryham/CLionProjects/projet/lib/libSDL2.dll.a
   FLAGS = -g
   LINK_FLAGS = -Wl,--undefined=WinMain
   LINK_LIBRARIES = C:/Users/ryham/CLionProjects/projet/lib/libSDL2main.a  C:/Users/ryham/CLionProjects/projet/lib/libSDL2.dll.a  -mwindows  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

@@ -31,11 +31,11 @@
  *   then it will get a new instance_id, instance_id's are monotonically increasing identifiers of a joystick plugged in.
  *
  * The term "player_index" is the number assigned to a player on a specific
- *   controller. For XInput controllers this returns the XInput user index.
+ *   Controller. For XInput controllers this returns the XInput user index.
  *   Many joysticks will not be able to supply this information.
  *
  * The term JoystickGUID is a stable 128-bit identifier for a joystick device that does not change over time, it identifies class of
- *   the device (a X360 wired controller for example). This identifier is platform dependent.
+ *   the device (a X360 wired Controller for example). This identifier is platform dependent.
  */
 
 #ifndef SDL_joystick_h_
@@ -126,7 +126,7 @@ typedef enum
  *
  * In particular, you are guaranteed that the joystick list won't change, so
  * the API functions that take a joystick index will be valid, and joystick
- * and game controller events will not be delivered.
+ * and game Controller events will not be delivered.
  *
  * As of SDL 2.26.0, you can take the joystick lock around reinitializing the
  * joystick subsystem, to prevent other threads from seeing joysticks in an
@@ -146,7 +146,7 @@ extern DECLSPEC void SDLCALL SDL_LockJoysticks(void) SDL_ACQUIRE(SDL_joystick_lo
  *
  * In particular, you are guaranteed that the joystick list won't change, so
  * the API functions that take a joystick index will be valid, and joystick
- * and game controller events will not be delivered.
+ * and game Controller events will not be delivered.
  *
  * \since This function is available since SDL 2.0.7.
  */
@@ -373,9 +373,9 @@ typedef struct SDL_VirtualJoystickDesc
     Uint16 vendor_id;   /**< the USB vendor ID of this joystick */
     Uint16 product_id;  /**< the USB product ID of this joystick */
     Uint16 padding;     /**< unused */
-    Uint32 button_mask; /**< A mask of which buttons are valid for this controller
+    Uint32 button_mask; /**< A mask of which buttons are valid for this Controller
                              e.g. (1 << SDL_CONTROLLER_BUTTON_A) */
-    Uint32 axis_mask;   /**< A mask of which axes are valid for this controller
+    Uint32 axis_mask;   /**< A mask of which axes are valid for this Controller
                              e.g. (1 << SDL_CONTROLLER_AXIS_LEFTX) */
     const char *name;   /**< the name of the joystick */
 
@@ -704,7 +704,7 @@ extern DECLSPEC SDL_JoystickID SDLCALL SDL_JoystickInstanceID(SDL_Joystick *joys
 /**
  * Get the number of general axis controls on a joystick.
  *
- * Often, the directional pad on a game controller will either look like 4
+ * Often, the directional pad on a game Controller will either look like 4
  * separate buttons or a POV hat, and not axes, but all of this is up to the
  * device and platform.
  *
@@ -952,9 +952,9 @@ extern DECLSPEC int SDLCALL SDL_JoystickRumble(SDL_Joystick *joystick, Uint16 lo
  * Each call to this function cancels any previous trigger rumble effect, and
  * calling it with 0 intensity stops any rumbling.
  *
- * Note that this is rumbling of the _triggers_ and not the game controller as
+ * Note that this is rumbling of the _triggers_ and not the game Controller as
  * a whole. This is currently only supported on Xbox One controllers. If you
- * want the (more common) whole-controller rumble, use SDL_JoystickRumble()
+ * want the (more common) whole-Controller rumble, use SDL_JoystickRumble()
  * instead.
  *
  * \param joystick The joystick to vibrate
@@ -975,7 +975,7 @@ extern DECLSPEC int SDLCALL SDL_JoystickRumbleTriggers(SDL_Joystick *joystick, U
  * Query whether a joystick has an LED.
  *
  * An example of a joystick LED is the light on the back of a PlayStation 4's
- * DualShock 4 controller.
+ * DualShock 4 Controller.
  *
  * \param joystick The joystick to query
  * \return SDL_TRUE if the joystick has a modifiable LED, SDL_FALSE otherwise.
@@ -1012,7 +1012,7 @@ extern DECLSPEC SDL_bool SDLCALL SDL_JoystickHasRumbleTriggers(SDL_Joystick *joy
  * Update a joystick's LED color.
  *
  * An example of a joystick LED is the light on the back of a PlayStation 4's
- * DualShock 4 controller.
+ * DualShock 4 Controller.
  *
  * \param joystick The joystick to update
  * \param red The intensity of the red LED

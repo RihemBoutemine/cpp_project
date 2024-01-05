@@ -12,15 +12,15 @@ public:
 
     double GetX() const override;
     double GetY() const override;
-    ObjectType GetType() const override;
     double GetAngle() const ;
     double GetSpeed();
+    bool Move(double width, double height);
+    ObjectType GetType() const override;
+
     void SetAngle(double angle);
     void SetSpeed(double speed);
-    std::string GetTypeName() override;
 
-    // Méthodes de déplacement
-    bool Move(double width, double height);
+    std::string GetTypeName() override;
 
 private:
     double angle;

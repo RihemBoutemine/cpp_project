@@ -3,7 +3,7 @@
 #define MODEL_HPP
 
 #include "flyingobject.hpp"
-#include "asteroid.hpp"
+#include "Asteroid.hpp"
 #include "missile.hpp"
 #include "spaceship.hpp"
 #include <vector>

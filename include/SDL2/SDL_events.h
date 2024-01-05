@@ -120,17 +120,17 @@ typedef enum
     SDL_JOYDEVICEREMOVED,       /**< An opened joystick has been removed */
     SDL_JOYBATTERYUPDATED,      /**< Joystick battery level change */
 
-    /* Game controller events */
-    SDL_CONTROLLERAXISMOTION  = 0x650, /**< Game controller axis motion */
-    SDL_CONTROLLERBUTTONDOWN,          /**< Game controller button pressed */
-    SDL_CONTROLLERBUTTONUP,            /**< Game controller button released */
-    SDL_CONTROLLERDEVICEADDED,         /**< A new Game controller has been inserted into the system */
-    SDL_CONTROLLERDEVICEREMOVED,       /**< An opened Game controller has been removed */
-    SDL_CONTROLLERDEVICEREMAPPED,      /**< The controller mapping was updated */
-    SDL_CONTROLLERTOUCHPADDOWN,        /**< Game controller touchpad was touched */
-    SDL_CONTROLLERTOUCHPADMOTION,      /**< Game controller touchpad finger was moved */
-    SDL_CONTROLLERTOUCHPADUP,          /**< Game controller touchpad finger was lifted */
-    SDL_CONTROLLERSENSORUPDATE,        /**< Game controller sensor was updated */
+    /* Game Controller events */
+    SDL_CONTROLLERAXISMOTION  = 0x650, /**< Game Controller axis motion */
+    SDL_CONTROLLERBUTTONDOWN,          /**< Game Controller button pressed */
+    SDL_CONTROLLERBUTTONUP,            /**< Game Controller button released */
+    SDL_CONTROLLERDEVICEADDED,         /**< A new Game Controller has been inserted into the system */
+    SDL_CONTROLLERDEVICEREMOVED,       /**< An opened Game Controller has been removed */
+    SDL_CONTROLLERDEVICEREMAPPED,      /**< The Controller mapping was updated */
+    SDL_CONTROLLERTOUCHPADDOWN,        /**< Game Controller touchpad was touched */
+    SDL_CONTROLLERTOUCHPADMOTION,      /**< Game Controller touchpad finger was moved */
+    SDL_CONTROLLERTOUCHPADUP,          /**< Game Controller touchpad finger was lifted */
+    SDL_CONTROLLERSENSORUPDATE,        /**< Game Controller sensor was updated */
 
     /* Touch events */
     SDL_FINGERDOWN      = 0x700,
@@ -410,14 +410,14 @@ typedef struct SDL_JoyBatteryEvent
 } SDL_JoyBatteryEvent;
 
 /**
- *  \brief Game controller axis motion event structure (event.caxis.*)
+ *  \brief Game Controller axis motion event structure (event.caxis.*)
  */
 typedef struct SDL_ControllerAxisEvent
 {
     Uint32 type;        /**< ::SDL_CONTROLLERAXISMOTION */
     Uint32 timestamp;   /**< In milliseconds, populated using SDL_GetTicks() */
     SDL_JoystickID which; /**< The joystick instance id */
-    Uint8 axis;         /**< The controller axis (SDL_GameControllerAxis) */
+    Uint8 axis;         /**< The Controller axis (SDL_GameControllerAxis) */
     Uint8 padding1;
     Uint8 padding2;
     Uint8 padding3;
@@ -427,14 +427,14 @@ typedef struct SDL_ControllerAxisEvent
 
 
 /**
- *  \brief Game controller button event structure (event.cbutton.*)
+ *  \brief Game Controller button event structure (event.cbutton.*)
  */
 typedef struct SDL_ControllerButtonEvent
 {
     Uint32 type;        /**< ::SDL_CONTROLLERBUTTONDOWN or ::SDL_CONTROLLERBUTTONUP */
     Uint32 timestamp;   /**< In milliseconds, populated using SDL_GetTicks() */
     SDL_JoystickID which; /**< The joystick instance id */
-    Uint8 button;       /**< The controller button (SDL_GameControllerButton) */
+    Uint8 button;       /**< The Controller button (SDL_GameControllerButton) */
     Uint8 state;        /**< ::SDL_PRESSED or ::SDL_RELEASED */
     Uint8 padding1;
     Uint8 padding2;
@@ -452,7 +452,7 @@ typedef struct SDL_ControllerDeviceEvent
 } SDL_ControllerDeviceEvent;
 
 /**
- *  \brief Game controller touchpad event structure (event.ctouchpad.*)
+ *  \brief Game Controller touchpad event structure (event.ctouchpad.*)
  */
 typedef struct SDL_ControllerTouchpadEvent
 {
@@ -467,7 +467,7 @@ typedef struct SDL_ControllerTouchpadEvent
 } SDL_ControllerTouchpadEvent;
 
 /**
- *  \brief Game controller sensor event structure (event.csensor.*)
+ *  \brief Game Controller sensor event structure (event.csensor.*)
  */
 typedef struct SDL_ControllerSensorEvent
 {
