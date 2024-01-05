@@ -32,13 +32,7 @@ double Missile::GetAngle() const {
 }
 
 // Setters
-void Missile::SetSpeed(double speed) {
-    this->speed = speed;
-}
 
-void Missile::SetAngle(double angle) {
-    this->angle = angle;
-}
 
 
 bool Missile::Move(double screenWidth, double screenHeight) {

@@ -21,9 +21,9 @@ public:
 
 private:
     Framework* framework; // Utilisez 'f' au lieu de 'framework'
-    Asteroid* asteroid;
-    Missile* missile;
-    Spaceship* spaceship;
+    //Asteroid* asteroid;
+    //Missile* missile;
+    //Spaceship* spaceship;
 };
 
 

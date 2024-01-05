@@ -15,8 +15,8 @@ public:
     ~Model();
 // Méthode pour obtenir les objets volants actuellement en jeu
     std::vector<FlyingObject*> GetFlyingObjects();
-    Asteroid* GetAsteroid() const { return asteroid; }
-    Missile* GetMissile() const { return missile; }
+    //Asteroid* GetAsteroid() const { return asteroid; }
+    //Missile* GetMissile() const { return missile; }
     Spaceship* GetSpaceship() const;
     void shoot();
     int Update();
@@ -24,8 +24,8 @@ public:
 
 
 private:
-    Asteroid* asteroid;
-    Missile* missile;
+    //Asteroid* asteroid;
+    //Missile* missile;
     Spaceship* spaceship;
     Framework* framework;
     std::vector<Missile*> missiles;

@@ -15,8 +15,6 @@ public:
     double GetAngle() const;
     ObjectType GetType() const override;
     std::string GetTypeName() override;
-
-    // Méthode de déplacement
     void Move(double screenWidth, double screenHeight);
 };
 
